@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: category-management
+          uri: http://category-management:8081
+          predicates:
+            - Path=/api/libraries/**
+
+        - id: elements-management
+          uri: http://elements-management:8082
+          predicates:
+            - Path=/api/books/**, /api/simplified-libraries/**
+
+      globalcors: # Global CORS configuration
+        corsConfigurations:
+          '[/**]': # Apply to all routes
+            allowedOrigins: "http://localhost:4200" # Allow requests from Angular frontend
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+            allowedHeaders: "*" # Allow all headers
+            allowCredentials: true # Allow cookies and credentials
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG

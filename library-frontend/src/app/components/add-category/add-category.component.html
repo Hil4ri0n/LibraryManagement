@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Add New Library</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="categoryName">Name:</label>
+      <input id="categoryName" type="text" [(ngModel)]="categoryName" name="categoryName" required />
+    </div>
+    <div>
+      <label for="categoryLocation">Location:</label>
+      <input id="categoryLocation" type="text" [(ngModel)]="categoryLocation" name="categoryLocation" required />
+    </div>
+    <button type="submit">Add Library</button>
+    <button (click)="navigateToCategoryList()">Cancel</button>
+  </form>
+</div>

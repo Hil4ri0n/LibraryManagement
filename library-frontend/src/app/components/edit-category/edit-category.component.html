@@ -1,0 +1,25 @@
+<div>
+  <h1>Edit Category</h1>
+  <form (ngSubmit)="onSubmit()">
+    <label for="name">Library Name:</label>
+    <input
+      type="text"
+      id="name"
+      [(ngModel)]="categoryName"
+      name="name"
+      required
+    />
+
+    <label for="location">Library Location:</label>
+    <input
+      type="text"
+      id="location"
+      [(ngModel)]="categoryLocation"
+      name="location"
+      required
+    />
+
+    <button type="submit">Save</button>
+    <button type="button" (click)="router.navigate(['/categories'])">Cancel</button>
+  </form>
+</div>

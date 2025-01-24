@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Add New Book</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="title">Title:</label>
+      <input
+        id="title"
+        type="text"
+        [(ngModel)]="elementTitle"
+        name="title"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="author">Author:</label>
+      <input
+        id="author"
+        type="text"
+        [(ngModel)]="elementAuthor"
+        name="author"
+        required
+      />
+    </div>
+
+    <button type="submit">Add Book</button>
+    <button type="button" (click)="router.navigate(['/category-details', categoryId])">
+      Cancel
+    </button>
+  </form>
+</div>

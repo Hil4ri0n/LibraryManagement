@@ -1,0 +1,18 @@
+<div>
+  <h1>Library List</h1>
+
+  <button (click)="navigateToAddCategory()">Add New Library</button>
+
+  <ul>
+    <li *ngFor="let category of categories">
+
+      {{ category.name }}
+
+      <button (click)="deleteCategory(category.id)">Delete</button>
+
+      <button (click)="navigateToEditCategory(category.id)">Edit</button>
+
+      <button [routerLink]="['/category-details', category.id]">View Details</button>
+    </li>
+  </ul>
+</div>

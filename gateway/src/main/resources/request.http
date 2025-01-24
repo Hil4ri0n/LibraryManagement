@@ -1,0 +1,56 @@
+### Create a Library
+POST http://localhost:8080/api/libraries
+Content-Type: application/json
+
+{
+  "name": "Test2137 Library",
+  "location": "Test2137 Location"
+}
+
+### Update a Library
+PUT http://localhost:8080/api/libraries/2dbf1772-6539-42b0-9746-80dac75d58ba
+Content-Type: application/json
+
+{
+"name": "Updated Library Name",
+"location": "Updated Location"
+}
+
+### Get All Libraries and Save ID
+GET http://localhost:8080/api/libraries
+
+### Create a Book in a Library
+POST http://localhost:8080/api/books/2b466ce4-9d46-43ba-a2d6-16bfcaaf6ba3
+Content-Type: application/json
+
+{
+  "title": "test2",
+  "author": "George Orwell"
+}
+
+### Update a Book
+PUT http://localhost:8080/api/books/aa6f71e2-f6ff-4068-a2a1-e0f3ce484739
+Content-Type: application/json
+
+{
+"title": "Updated Book Title",
+"author": "Updated Author Name"
+}
+
+### Get All Books
+GET http://localhost:8080/api/books
+
+### Get Library
+GET http://localhost:8080/api/libraries/2dbf1772-6539-42b0-9746-80dac75d58ba
+
+### Get Books in a Library
+GET http://localhost:8080/api/books/library/f0c0f0fb-ea68-4772-b446-b785b83719bb
+
+### Get a Book by ID
+GET http://localhost:8080/api/books/0d0f8883-f75b-457e-8a89-494822b88c77
+
+### Delete a Book
+DELETE http://localhost:8080/api/books/0d0f8883-f75b-457e-8a89-494822b88c77
+
+### Delete a Library
+DELETE http://localhost:8080/api/libraries/f0c0f0fb-ea68-4772-b446-b785b83719bb

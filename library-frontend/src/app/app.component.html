@@ -1,0 +1,52 @@
+
+<nav>
+  <ul>
+    <li><a routerLink="/categories" routerLinkActive="active">Libraries</a></li>
+  </ul>
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+
+<style>
+  nav {
+    background: linear-gradient(90deg, #ff6a00, #ee0979);
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-family: 'Inter', Arial, sans-serif;
+  }
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav li {
+    display: inline;
+    margin: 0 1rem;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+
+  nav a.active {
+    border-bottom: 2px solid white;
+  }
+
+  nav a:hover {
+    color: #f0f0f0;
+  }
+
+  main {
+    padding: 2rem;
+    font-family: 'Inter', Arial, sans-serif;
+  }
+</style>

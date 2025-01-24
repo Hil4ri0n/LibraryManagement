@@ -1,0 +1,35 @@
+<div class="container">
+  <h2>Library Details</h2>
+  <p><strong>Name:</strong> {{ categoryName }}</p>
+  <p><strong>Location:</strong> {{ categoryLocation }}</p>
+
+  <h3>Books</h3>
+  <table *ngIf="elements.length > 0; else noElements">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let element of elements">
+      <td>{{ element.title }}</td>
+      <td>
+        <button (click)="deleteElement(element.id)">Delete</button>
+        <button [routerLink]="['/edit-element', categoryId, element.id]">
+          Edit
+        </button>
+        <button [routerLink]="['/element-details', categoryId, element.id]">
+          View Details
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noElements>
+    <p>No books found for this library.</p>
+  </ng-template>
+  <button [routerLink]="['/add-element', categoryId]">Add New Book</button>
+  <button (click)="navigateToCategoryList()">Back to Libraries</button>
+</div>

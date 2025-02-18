@@ -59,7 +59,6 @@ library-management/
 
 Make sure you have the following installed:
 
-- Node.js (v18 or later)
 - npm (v8 or later)
 - Java 17
 - Docker and Docker Compose
